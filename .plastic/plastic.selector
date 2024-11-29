@@ -1,0 +1,4 @@
+repository "2DWave Game/2DWave Game@5772745498673@cloud"
+  path "/"
+    br "/main"
+    co "/main"
