@@ -43596,6 +43596,7 @@ GameObject:
   - component: {fileID: 1682890060}
   - component: {fileID: 1682890063}
   - component: {fileID: 1682890064}
+  - component: {fileID: 1682890066}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -43667,7 +43668,7 @@ Transform:
   m_GameObject: {fileID: 1682890057}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.14, y: 0.14, z: 0}
+  m_LocalPosition: {x: 0.558, y: 0.076, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -43742,7 +43743,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &1682890063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43778,6 +43779,89 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!60 &1682890066
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1682890057}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.16, y: 0.16}
+    newSize: {x: 0.16, y: 0.16}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.01217483, y: 0.0819331}
+      - {x: 0.009741648, y: 0.08187721}
+      - {x: -0.013837436, y: 0.08114521}
+      - {x: -0.01548311, y: 0.081845686}
+      - {x: -0.019602453, y: 0.075619884}
+      - {x: -0.025453277, y: 0.06928849}
+      - {x: -0.034213237, y: 0.06559016}
+      - {x: -0.040049266, y: 0.060474336}
+      - {x: -0.049369853, y: 0.047734283}
+      - {x: -0.05118318, y: -0.019850984}
+      - {x: -0.059295308, y: -0.019581981}
+      - {x: -0.06164636, y: -0.029443923}
+      - {x: -0.06985623, y: -0.028636301}
+      - {x: -0.071711235, y: -0.050912805}
+      - {x: -0.061414685, y: -0.05100908}
+      - {x: -0.06175606, y: -0.062310655}
+      - {x: -0.04099826, y: -0.0631163}
+      - {x: -0.041874293, y: -0.071527615}
+      - {x: -0.0077186995, y: -0.0709583}
+      - {x: -0.008419339, y: -0.061534476}
+      - {x: 0.0060946196, y: -0.0634453}
+      - {x: 0.010364924, y: -0.07142901}
+      - {x: 0.03913634, y: -0.07273796}
+      - {x: 0.04064159, y: -0.0616858}
+      - {x: 0.06196723, y: -0.06028769}
+      - {x: 0.0629244, y: -0.052402332}
+      - {x: 0.073343135, y: -0.05245008}
+      - {x: 0.07159609, y: -0.027909987}
+      - {x: 0.06157922, y: -0.028508745}
+      - {x: 0.059184812, y: -0.019270513}
+      - {x: 0.05239022, y: -0.017564686}
+      - {x: 0.054507915, y: 0.04227684}
+      - {x: 0.04409433, y: 0.054504298}
+      - {x: 0.030123712, y: 0.06828215}
+      - {x: 0.015723485, y: 0.07255309}
+      - {x: 0.0120440535, y: 0.080747925}
+  m_UseDelaunayMesh: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
