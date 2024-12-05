@@ -2,10 +2,21 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
+
+	public Camera sceneCamera;
 	[SerializeField] private int speed = 5;
 	private Vector2 movement;
 	private Rigidbody2D rb;
 	private Animator animator;
+	public Weapon weapon;
+	private Vector2 mousePosition;
+
+
+	void Update()
+	{
+		ProcessInputs();
+
+	}
 
 	private void Awake()
 	{
@@ -39,4 +50,15 @@ public class PlayerMovement : MonoBehaviour
 		}
 		
 	}
+
+	void ProcessInputs()
+	{
+		mousePosition = sceneCamera.ScreenToWorldPoint(Input.mousePosition);
+		if (Input.GetMouseButtonDown(0))
+		{
+			weapon.Fire();
+		}
+	}
+
+
 }
