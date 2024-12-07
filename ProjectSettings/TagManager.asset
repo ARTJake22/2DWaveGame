@@ -6,11 +6,12 @@ TagManager:
   tags:
   - Enemy
   - Bullet
+  - SpawnPoint
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
   - 

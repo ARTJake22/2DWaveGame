@@ -1,0 +1,48 @@
+# Ignore Unity-specific folders
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+UserSettings/
+
+# Ignore user-specific files
+.idea/
+# Ignore Unity-specific folders
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+UserSettings/
+
+# Ignore user-specific files
+.idea/
+# Ignore Unity-specific folders
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+UserSettings/
+
+# Ignore user-specific files
+.idea/
+.vscode/
+.vs/
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore Unity Asset Store files
+AssetStoreTools*
+
+# Ignore logs
+*.log
+
+# Ignore all files that are temporary or auto-generated
+*.suo
+*.user
+*.userprefs
+
