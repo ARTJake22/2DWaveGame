@@ -9,15 +9,20 @@ public class Enemy : MonoBehaviour
     Transform target;
     Vector2 moveDirection;
 
+    [SerializeField] float health, maxHealth = 3f;
+    [SerializeField] FloatingHealthBar healthBar;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        healthBar = GetComponentInChildren<FloatingHealthBar>();
 
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
     {
         target = GameObject.Find("Player").transform;
+        healthBar.UpdateHealthBar(health, maxHealth);
     }
 
     // Update is called once per frame
@@ -36,5 +41,18 @@ public class Enemy : MonoBehaviour
         {
             rb.linearVelocity = new Vector2(moveDirection.x, moveDirection.y) * moveSpeed;
         }
+    }
+
+    public void TakeDamage(float damageAmount){
+        health -= damageAmount;
+        healthBar.UpdateHealthBar(health, maxHealth);
+        if (health <= 0){
+            Die();
+        }
+
+    }
+
+    void Die(){
+        Destroy(gameObject);
     }
 }

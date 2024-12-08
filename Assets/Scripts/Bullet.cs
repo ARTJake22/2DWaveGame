@@ -4,15 +4,18 @@ public class Bullet : MonoBehaviour
 {
 
     public Rigidbody2D rb;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public void OnTriggerEnter2D(Collider2D other)
     {
-        
+        switch(other.gameObject.tag){
+            case "MapObjects":
+            Destroy(gameObject);
+            break;
+
+            case "Enemy":
+            other.gameObject.GetComponent<Enemy>().TakeDamage(1);
+            Destroy(gameObject);
+            break;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

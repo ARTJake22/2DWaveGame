@@ -11,7 +11,14 @@ public class PlayerMovement : MonoBehaviour
 	public Weapon weapon;
 	private Vector2 mousePosition;
 
+	private bool collision;
 
+   	[SerializeField] float health, maxHealth = 10f;
+    [SerializeField] FloatingHealthBar healthBar;
+	void Start()
+	{
+
+	}
 	void Update()
 	{
 		ProcessInputs();
@@ -60,5 +67,32 @@ public class PlayerMovement : MonoBehaviour
 		}
 	}
 
+	    
+		
+	public void TakeDamage(float damageAmount){
+        health -= damageAmount;
+        healthBar.UpdateHealthBar(health, maxHealth);
+        if (health <= 0){
+            Die();
+        }
 
+    }
+
+    void Die(){
+        Destroy(gameObject);
+    }
+
+
+
+
+	public void OnTriggerStay2D(Collider2D other)
+    {
+		switch(other.gameObject.tag){
+            case "Enemy":
+            TakeDamage(0.1f);
+            break;
+	}
+
+
+}
 }
