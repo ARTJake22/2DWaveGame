@@ -3,8 +3,10 @@ using UnityEngine.UI;
 
 public class FloatingHealthBar : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     [SerializeField] private Slider slider;
+
+
+    //updates the slider value to decrease when the gameObject its attached to takes damage.
     public void UpdateHealthBar(float currentValue, float maxValue){
         slider.value = currentValue / maxValue;
     }

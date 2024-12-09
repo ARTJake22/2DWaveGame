@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
@@ -19,18 +20,24 @@ public class PlayerMovement : MonoBehaviour
 	{
 
 	}
+	
+	//Runs ProcessInputs() at every frame.
 	void Update()
 	{
 		ProcessInputs();
 
 	}
 
+
+//Gets animator and rigidbody2D component for this gameObject in order to animate and allow movement 
 	private void Awake()
 	{
 		rb = GetComponent<Rigidbody2D>();
 		animator = GetComponent<Animator>();
 	}
 
+
+//Takes in movement vectors for player movement and also creates a bool later to be used for walking animations.
 	private void OnMovement (InputValue value)
 	{
 		movement = value.Get<Vector2>();
@@ -46,6 +53,8 @@ public class PlayerMovement : MonoBehaviour
 		}
 	}
 	
+
+	//Allows movement (added velocity using .linearVelocity)
 	private void FixedUpdate()
 	{
 		// No velocity Variant
@@ -58,6 +67,8 @@ public class PlayerMovement : MonoBehaviour
 		
 	}
 
+
+//Processes mouse position when the mouse is on screen, also calls Fire() when mouse is clicked, in order to fire a bullet
 	void ProcessInputs()
 	{
 		mousePosition = sceneCamera.ScreenToWorldPoint(Input.mousePosition);
@@ -68,7 +79,7 @@ public class PlayerMovement : MonoBehaviour
 	}
 
 	    
-		
+//Makes the player TakeDamage, will be called upon when in contact with an enemy, kills the player when health is 0 or below.
 	public void TakeDamage(float damageAmount){
         health -= damageAmount;
         healthBar.UpdateHealthBar(health, maxHealth);
@@ -78,13 +89,15 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
+
+//Kills the player (to be called usually when player health is 0 or below)
     void Die(){
         Destroy(gameObject);
     }
 
 
 
-
+//Makes the enemy take damage as long as the enemy is in contact with it.
 	public void OnTriggerStay2D(Collider2D other)
     {
 		switch(other.gameObject.tag){

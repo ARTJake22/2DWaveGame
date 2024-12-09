@@ -11,6 +11,10 @@ public class Weapon : MonoBehaviour
 	public Transform player;
 	public Vector3 offset;
 
+
+//transforming to player object at every frame, also copying the direction and aim angle
+//On this project bullets instantiate from inside the player so this update feature is less relevant
+//Accounting for player/bullet collision in the collision matrix
 	void Update()
 	{
 		transform.position = player.position + offset;
@@ -20,6 +24,8 @@ public class Weapon : MonoBehaviour
 		rb.rotation = aimAngle;
 	}
 
+
+//Instantiates a bullet prefab with force at the firePoint coodinates
 	public void Fire()
 	{
 		GameObject projectile = Instantiate(bullet, firePoint.position, firePoint.rotation);
