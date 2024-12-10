@@ -1,6 +1,8 @@
+using JetBrains.Annotations;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 public class PlayerMovement : MonoBehaviour
 {
 
@@ -14,8 +16,11 @@ public class PlayerMovement : MonoBehaviour
 
 	private bool collision;
 
+	public Text coinText;
    	[SerializeField] float health, maxHealth = 10f;
     [SerializeField] FloatingHealthBar healthBar;
+
+	public float coinAmount;
 	void Start()
 	{
 
@@ -104,8 +109,28 @@ public class PlayerMovement : MonoBehaviour
             case "Enemy":
             TakeDamage(0.1f);
             break;
+		}
 	}
 
 
+	
+    public void OnTriggerEnter2D(Collider2D other){
+        switch(other.gameObject.tag){
+            case "Coin":
+			coinAmount = coinAmount + 0.5f;
+			if(coinAmount == 3){
+			health = 10f;
+			healthBar.UpdateHealthBar(health, maxHealth);
+			coinAmount = 0;
+			}
+			Destroy(other.gameObject);
+			coinText.text = coinAmount.ToString();
+            break;
+        }
+
+    }
+
+
+
 }
-}
+
