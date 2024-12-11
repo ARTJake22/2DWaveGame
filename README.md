@@ -30,7 +30,7 @@ Ghost Shooter is an action-packed 2D RPG where players battle against waves of g
    - Health bars for the enemy and player ✅
    - A count of items picked up ✅
 - General
-   -Level system, different levels are harder and have different waves / maps?
+   - Level system, different levels are harder and have different waves / maps?
 
   
 #
@@ -40,6 +40,8 @@ Ghost Shooter is an action-packed 2D RPG where players battle against waves of g
   - "Low" Computer requirements
   - Keep FPS manageable (Asset Management, keep assets on screen as low as possible)
   - Reliability, no bugs that crash the game
+
+
 
 
 
